@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?
+    family=Poppins:wght@300;400;500;600;700&display=swap" 
+    rel="stylesheet">
+    <title>MyFurniture.com</title>
+</head>
+
+<style>
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+.front-content{
+    margin: 5px 50px 5px 50px; 
+}
+body{
+    background-image: url("");
+    background-size: cover;
+    background-position: center;
+    font-family: 'poppins', sans-serif;
+    background-color: #EBF7E3;
+} 
+.menu-bar{
+    background:#65A13A;
+    text-align:left;
+    margin-top: 10px;
+    height: 90px;
+    width: 100%;
+}
+
+.menu-bar ul{
+    display: inline-flex;
+    list-style: none;
+    color:white;
+    align-items: center;
+}
+.menu-bar ul li{
+    width: 120px;
+    margin: 15px;
+    padding: 10px;
+}
+.menu-bar ul li:nth-last-child(7){
+    width: 90px;
+}
+.menu-bar ul li:nth-last-child(2){
+    width: 80px;
+}
+.menu-bar ul li a{
+    text-decoration:none;
+    color: white;
+}
+.active, .menu-bar ul li:hover {
+    background: #A2DF77;
+    border-radius: 5px;
+    height: 40px;
+}
+.menu-bar ul li:hover:nth-last-child(2){
+    width: 80px;
+}
+.menu-bar ul li:hover:last-child{
+    background: none;
+}
+.menu-bar .fa{
+    margin-right: 8px;
+}
+.sub-menu-1{
+    display: none;
+}
+.menu-bar ul li:hover .sub-menu-1{
+    display: block;
+    position: absolute;
+    background: #65A13A;
+    margin-top: 15px;
+    margin-left:15px;
+}
+.menu-bar ul li:hover .sub-menu-1 ul{
+    display: block;
+    margin: 10px;
+}
+.menu-bar ul li:hover .sub-menu-1 ul li{
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px dotted white;
+    border-radius: 3px;
+    text-align: left;
+}
+.menu-bar ul li:hover .sub-menu-1 ul li :last-child{
+    border-bottom: none;
+}
+.menu-bar ul li:hover .sub-menu-1 ul li a:hover{
+    color:rgb(194, 104, 30);
+}
+.fa-angle-right{
+    float: right;
+}
+.sub-menu-2{
+    display: none;     
+}
+.hover-me:hover .sub-menu-2{
+    position: absolute;
+    display: block;
+    margin-top: -40px;
+    margin-left: 140px;
+    background: #65A13A;
+}
+.topnav input[type=text] {
+   float: inline-end;
+   border: none;
+   padding: 1px;
+   font-size: 17px;
+   width: 450px;
+   height: 35px;
+   margin-top: 2px;
+   border-radius: 10px;
+   border: none;
+}
+.search-place{
+    position: fixed;
+    display: none;
+}
+.topnav:hover .search-place{
+    display: block;
+    position: absolute;
+    background: #65A13A;
+    margin-top: 15px;
+}
+.topnav :hover .search-place ul{
+    display: block;
+    margin: 10px;
+}
+.topnav:hover .search-place ul li{
+    width: 400px;
+    padding: 10px;
+    border-bottom: 1px dotted white;
+    border-radius: 3px;
+    text-align: left;
+}
+   @media screen and (max-width: 600px) {
+    .topnav a, .topnav input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
+.website-features{
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    float:left;
+    padding-left: 10px;
+    padding-right: 10px;    
+    background: black;
+    color: white;
+
+}
+.website-features img{
+    width: 100px;
+    margin-left: 100px;
+}
+.footer{
+    margin-top: 50px;  
+} 
+.footer h1 {
+    font-size: 15px;
+    margin: 25px 0;
+}
+.footer p {
+    font-size: 12px;
+}
+.bottom {
+    float: left;
+    margin: 30px 30px 30px 30px ;
+    padding: 15px;
+}	
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.col-2{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+.col-2 img{
+    max-width: 100%;
+    padding: 50px 0;
+    border-radius: 15px;
+}
+.col-2 h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+}
+.col-2 p{
+    font-size: larger;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+.btn{
+    display: inline-block; 
+    background: #ff523b; 
+    color: #fff; 
+    padding: 8px 30px; 
+    margin: 30px 0; 
+    border-radius: 30px;  
+    transition: 0.5s;  
+    text-decoration: none;
+}
+.btn:hover{
+    background:#2bab0d;
+}
+.header{
+    margin-top:10px;
+}
+.categories{
+    margin: 70px 0;
+    margin-bottom: 5px;
+}
+.col-3{
+    flex-basis: 30%;
+    min-width: 250px;
+}
+.col-3 img{
+    width: 100%;  
+    margin: 5px;  
+}
+.small-container{
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+img{
+    border-radius: 15px;
+    margin-top: 5px;
+}
+.footer-column{
+    margin-top: 5px; 
+    color:#8a8a8a;
+    text-align: center;
+    color: white;
+}
+.footer-column h1{
+    font-size: 20px;
+    border-bottom: outset white;
+    color:rgb(214, 132, 145);   
+    padding: 30px 10px;
+    margin: 0px 70px 0px 70px ;
+}
+.footer-column p{
+    font-size: 15px;
+    margin-top: 5px;
+}
+.bottom{
+    float: left;
+    margin: 0px 50px 0px 50px ;
+    padding: 30px 10px;
+    color:rgb(214, 132, 145);  
+    font-size: 20px; 
+}
+.bottom p{
+    margin: 10px;
+    font-size: 10px;
+}
+.brands h1{
+    font-size: larger;
+    text-align: center;
+    border: dotted black;    
+}
+.brands{
+    margin: 10px ;
+    margin-bottom: 20px;
+}
+.rating{
+    color: #2bab0d;
+}
+.testimonial{
+    padding-top: 50px;
+} 
+
+.testimonial .col-3{
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.testimonial .col-3 img{
+    width: 80px;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+
+.testimonial .col-3:hover {    
+    transform: translateY(-10px);
+}
+.fa.fa-quote-left{ 
+    font-size: 34px; 
+    color: #2bab0d;
+} 
+.col-3 p{
+    font-size: 12px;
+    margin: 12px 0; 
+    color: #777;
+}
+.testimonial .col-3 h3{ 
+    font-weight: 600; 
+    color: #555; 
+    font-size: 16px;
+}
+
+.col-5{
+    width: 160px;
+}
+.col-5 img{
+    width: 100%;
+    cursor: pointer;
+}
+.bottom img{
+    height: 100px;
+    width: 180px;
+}
+.offer img{
+    height: 100%;
+    width: 100%;
+}
+.offer .btn2{
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    width: 25%;
+    margin: auto;
+    color: #fff;
+    background: content-box radial-gradient(#99e663, #6da346);
+    font-size: larger;
+    border: cornsilk;     
+}
+.brands .btn2{
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    width: 25%;
+    margin: auto;
+    color: #fff;
+    background: content-box radial-gradient(#99e663, #6da346);
+    font-size: larger;
+    border: cornsilk;   
+}
+.testimonial .btn2{
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    width: 25%;
+    margin: auto;
+    color: #fff;
+    background: content-box radial-gradient(#99e663, #6da346);
+    font-size: larger;
+    border: cornsilk;  
+}
+footer{
+    background: black;
+    padding-top: 4px;
+    padding-bottom: 50px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.footer-image{
+    width: 90px;
+    height: 70px;
+}
+
+.footer-column a{
+    color: #ffa51f85;
+}
+
+.footer-column i{
+    font-size: 22px;
+    margin-bottom: 2px;
+    color: #ffa41f;
+}
+
+.copyright ul li {
+	display: inline-block;
+	padding: 0px 10px 0px 10px;
+}
+
+a.social-icon {
+	color: #fff;
+	font-size: 20px;
+}
+
+a.social-icon:hover {
+	color: #E4C062 ;
+}
+
+.follow {
+	float: right;
+    margin-right: 20px;
+    
+}
+
+.text {
+	float: left;
+    margin-left: 20px;
+}
+
+.copyright {
+	color: #fff;
+    padding: 5px 0px 15px 0px;
+    font-weight: 100;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	border-top: 1px solid rgba(25, 24, 24, 0.58);
+}
+
+.copyright h4{
+    float: right;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+
+.text p {
+    margin-top: 5px;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+
+.text a {
+	color: #E4C062 ;
+	text-decoration: none;
+}
+</style>
+<body >
+    <div>
+    <div class="menu-bar"  >                       
+        <ul>
+         <img src="LOGO.png" style="height: 68px; width: 140px; margin: 2px; " >
+          <li class="active"><i class="fa fa-home"></i><a href="front4.html">Home</a></li>
+          <li><i class="fa fa-user"></i><a href="about us.html">About us</a></li>
+          <li><i class="fa fa-phone-square"></i><a href="Contact us .html">Contact us</a></li>
+          <li><i class="fa fa-font-awesome"></i><a href="TRENDING/trending 1.html">Trending</a>
+          <li><i class="fa fa-product-hunt"></i><a href="#">Products</a>
+            
+            <div class="sub-menu-1">
+                <ul>
+                    <li><a href="BED/bed 1.html">Beds</a></li>
+                    <li><a href="SOFA/sofa 1.html">Sofas</a></li>
+                    <li class="hover-me"><a href="TABLE/table.html">Tables</a><i class="fa fa-angle-right"></i>
+                        <div class="sub-menu-2">
+                            <ul>
+                                    <li><a href="TABLE/cofee table.html">Coffe table</a></li>
+                                    <li><a href="TABLE/dressing table.html">Dressing table</a></li>
+                                    <li><a href="TABLE/study table.html">Study table</a></li>
+                                    <li><a href="TABLE/bedside table.html">Bedside table</a></li>
+                            </ul>
+                        </div>        
+                    </li>         
+                    <li><a href="CHAIR/chair 1.html">Chairs</a></li>
+                    <li><a href="WARDRODE/wardrobe 1.html">Wardrobe</a></li>
+                </ul>
+                </div>
+            </li>
+          <li><i class="fa fa-shopping-cart"></i><a href="Cart.html" target="_blank">Cart</a></li>
+          <div class="topnav">
+            <li>
+                <input type="text" placeholder="Search..." id="myInput" onkeyup="searchyoutubers()">
+                
+                <div class="search-place">
+                    <ul>
+                        <li><a href="BED/bed 1.html">Beds</a></li>
+                        <li><a href="SOFA/sofa 1.html">Sofas</a></li>
+                        <li><a href="TABLE/table.html">Tables</a></li>
+                        <li><a href="CHAIR/chair 1.html">Chairs</a></li>
+                        <li><a href="WARDRODE/wardrobe 1.html">Wardrobe</a></li>
+                    </ul>
+                </div>
+            </li>
+          </div>
+                
+                </span>
+            </li>
+          </div> 
+        </div>
+     </ul>
+     <div class="header">
+    <div class="front-content">
+        <div class="row">
+            <div class="col-2">
+                <h1>Design is not just what it <br>looks like and feels like....</h1>
+                <p>Design creates culture. <br>
+                Culture shapes values. <br>
+                Values determine the future</p> 
+                <a href="trending.html" class="btn">Explore now &#8594 </a>
+            </div>
+            <div class="col-2">
+                <img src="christopher-jolly-GqbU78bdJFM-unsplash.jpg">            
+            </div>        
+        </div> 
+    </div>
+    </div>
+    <div class="categories">
+        <div class="small-container">
+        <div class="row">        
+            <div class="col-3"> 
+                <a href="SOFA/sofa.html">
+                    <img src="Sofa 1.jpg">  
+                    </a>                      
+            </div>            
+            <div class="col-3"> 
+                <a href="BED/bed.html">
+                    <img src="bed 2.jpg">  
+                </a>                       
+            </div> 
+            <div class="col-3"> 
+                <a href="CHAIR/chair.html">
+                    <img src="Chair 2.jpg"> 
+                    </a>                        
+            </div>        
+        </div>   
+        </div>     
+    </div>    
+      
+    <div class="categories">
+        <div class="small-container">
+        <div class="row">        
+            <div class="col-3"> 
+                <a href="TABLE/bedside table.html">
+                    <img src="b table.jpg">
+                    </a>       
+                       
+            </div>        
+            <div class="col-3">  
+                <a href="TABLE/study table.html">
+                    <img src="S table.jpg">       
+                </a>      
+            </div>        
+            <div class="col-3">
+                <a href="TABLE/cofee table.html">
+                    <img src="C table.jpg">                   
+                 </a>        
+                        
+            </div>        
+        </div>   
+        </div> 
+    </div> <br> <br> <br> <br><br> <br>
+        
+    <div class="offer">
+        <h2 href="" class="btn2">   Coupons   </h2> <br> 
+        <img src="Offer logo.png" >
+    </div> <br> <br> <br>
+
+    <div class="testimonial">
+        <h2 href="" class="btn2">   Costumer Reviews   </h2>  <br> <br>
+        <div class="small-container">        
+            <div class="row">        
+                <div class="col-3">        
+                    <i class="fa fa-quote-left"></i>        
+                    <p>This has been one of the most pleasant online shopping experience that I ever had. Your customer service as well as timely delivery has made me a permanent fan of yours.</p>        
+                        <div class="rating">        
+                            <i class="fa fa-star"></i>        
+                            <i class="fa fa-star"></i> 
+                            <i class="fa fa-star"></i>        
+                            <i class="fa fa-star"></i>        
+                            <i class="fa fa-star-o"></i>        
+                        </div>        
+                        <img src="profile2.jpg">        
+                    <h3>Annie Leibovitz</h3>        
+                </div>
+                <div class="col-3">        
+                    <i class="fa fa-quote-left"></i>        
+                    <p>The experience has been fantastic and the quality of the delivered products has been great. We are now completely comfortable buying any product from MyFurniture.</p>        
+                        <div class="rating">        
+                            <i class="fa fa-star"></i>        
+                            <i class="fa fa-star"></i> 
+                            <i class="fa fa-star"></i>        
+                            <i class="fa fa-star"></i>        
+                            <i class="fa fa-star"></i>        
+                        </div>        
+                        <img src="profile5.jpg">        
+                    <h3>Richard Avedon</h3>        
+                </div>
+                <div class="col-3">        
+                    <i class="fa fa-quote-left"></i>        
+                    <p>One thing which makes you stand out is the wide range of products on your website and the easy access to it. Even the packaging and the delivery was commendable.</p>        
+                        <div class="rating">        
+                            <i class="fa fa-star"></i>        
+                            <i class="fa fa-star"></i> 
+                            <i class="fa fa-star"></i>        
+                            <i class="fa fa-star"></i>        
+                            <i class="fa fa-star-o"></i>        
+                        </div>        
+                        <img src="profile3.jpg">        
+                    <h3>Dorothea Lange</h3>        
+                </div>        
+            </div>        
+        </div>        
+    </div>
+    <br><br><br><br><br><br>
+
+        <div class="brands">
+            <h2 href="" class="btn2">   Brands   </h2> <br> 
+                
+                <div class="small-container"> <div class="row">            
+                <div class="col-5">            
+                    <img src="hulsta-.png">            
+                </div>            
+                <div class="col-5">            
+                    <img src="Ikea-.jpg">            
+                </div>            
+                <div class="col-5">            
+                    <img src="nilkamal.jpg">            
+                </div>            
+                <div class="col-5">            
+                    <img src="godrej-Interio.png">            
+                </div>            
+                <div class="col-5">            
+                    <img src="damro.jpg">            
+                </div>            
+            </div>            
+        </div>            
+        </div>  
+             
+        <div>
+        <footer>
+            <div class="row">
+                <div class="footer-column">
+                    <h1>Useful Links</h1>           
+                    <p>Privacy Policy</p>
+                    <p>Discount Coupons</p>
+                    <p>Customer Reviews</p>  
+                    <p>Return Policy</p>  
+                    <p>Terms Use</p>
+                </div>
+                <div class="footer-column">
+                    <h1>company</h1>
+                    <p>Contact us</p>
+                    <p>Affiliate</p>                                 
+                    <p>About Us</p>                                 
+                    <p>carrer</p>                       
+                    <p>Blog</p>
+                </div>
+                <div class="footer-column">
+                    <div class="bottom footer image">
+                        <h1>Find us on map</h1>
+                        <img src="map logo.png">                               
+                    </div>                
+                </div>
+                <div class="footer-column">
+                    <div class="bottom footer image">
+                        <h1>Download app</h1>
+                        <img src="footer image.png">                               
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <h4>Follow us now!</h4>
+                <div class="follow">
+                    <ul>
+                        <li>
+                            <a class="social-icon" href="#">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="social-icon" href="#">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="social-icon" href="#">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="social-icon" href="#">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="text">
+                    <p>Copyright © 2021 MyFurniture. All Rights Reserved. 
+                        <a href="front4.html">MyFurniture</a>
+                    </p>
+                </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </footer>
+    
+        
+    <script>   
+    const searchyoutubers = () => { 
+        let filter = document.getElementById('myInput').value.toUpperCase();
+        let ul = document.getElementById('myUL');
+        let li = ul.getElementsByTagName('li');
+        for(var i=0; i<li.length; i++){
+
+            let a = li[i].getElementsByTagName('a')[0];
+            let textValue = a.textContent || a.innerHTML;
+
+            if(textValue.toUpperCase().indexOf(filter) > -1){ 
+                li[i].style.display = '';
+            }else{
+                li[i].style.display ='none' ;
+            }
+        }
+    }
+    </script>
+        
+</body>
+</html>
